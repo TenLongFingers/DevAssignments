@@ -5,24 +5,23 @@
   Invoke the callback, passing in the product of the two numbers multiplied as the argument. 
 */
 
-const multiply = (num1, num2, cb) => {num1 * num2}
+const multiply = (num1, num2, cb) => cb(num1 * num2);
 
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// multiply(4, 3, answer => {
-//   console.log('The answer is ' + answer) //should console.log 12
-// })
-
-
+multiply(4, 3, answer => {
+  console.log('The answer is ' + answer) //should console.log 12
+})
 
 ////////// PROBLEMS 2 - 6 //////////
 
 // The names array will be used in problems 2 - 6.
 
 // Do not edit the code below.
+
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 // Do not edit the code above.
 
