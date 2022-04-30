@@ -5,7 +5,7 @@
   Invoke the callback, passing in the product of the two numbers multiplied as the argument. 
 */
 
-// CODE HERE
+const multiply = (num1, num2, cb) => {num1 * num2}
 
 
 // UNCOMMENT THE FUNCTION CALL BELOW
