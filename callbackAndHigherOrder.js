@@ -107,7 +107,15 @@ contains(names, 'Colt', result => {
   Hint: you can use a nested for loop to do this.
 */
 
-// CODE HERE
+const uniq = (array, cb) => {
+  const ans = []
+  for (i = 0; i < array.length; i++){
+    if (!ans.includes(array[i])){
+      ans.push(array[i])
+    }
+  }
+  cb(ans);
+}
 
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
