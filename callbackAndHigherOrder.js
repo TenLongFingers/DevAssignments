@@ -7,14 +7,13 @@
 
 const multiply = (num1, num2, cb) => cb(num1 * num2);
 
-
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-multiply(4, 3, answer => {
-  console.log('The answer is ' + answer) //should console.log 12
-})
+multiply(4, 3, (answer) => {
+  console.log("The answer is " + answer); //should console.log 12
+});
 
 ////////// PROBLEMS 2 - 6 //////////
 
@@ -22,10 +21,8 @@ multiply(4, 3, answer => {
 
 // Do not edit the code below.
 
-var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
+var names = ["Tyler", "Cahlan", "Ryan", "Colt", "Tyler", "Blaine", "Cahlan"];
 // Do not edit the code above.
-
-
 
 ////////// PROBLEM 2 //////////
 
@@ -36,16 +33,13 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 
 const first = (array, cb) => cb(array[0]);
 
-
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-first(names, firstName => {
-  console.log('The first name in names is ' + firstName)
-})
-
-
+first(names, (firstName) => {
+  console.log("The first name in names is " + firstName);
+});
 
 ////////// PROBLEM 3 //////////
 
@@ -54,18 +48,15 @@ first(names, firstName => {
   Then invoke the callback, passing in the last element in the array as the argument.
 */
 
-const last = (array, cb) => cb(array[array.length-1]);
-
+const last = (array, cb) => cb(array[array.length - 1]);
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-last(names, lastName => {
-  console.log('The last name in names is ' + lastName)
-})
-
-
+last(names, (lastName) => {
+  console.log("The last name in names is " + lastName);
+});
 
 ////////// PROBLEM 4 //////////
 
@@ -77,27 +68,24 @@ last(names, lastName => {
 */
 
 const contains = (array, name, cb) => {
-  if(array.includes(name)){
-    cb(true)
+  if (array.includes(name)) {
+    cb(true);
   } else {
-    (cb(false));
+    cb(false);
   }
-}
-
+};
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-contains(names, 'Colt', result => {
-  if(result === true){
-    console.log('Colt is in the array')
+contains(names, "Colt", (result) => {
+  if (result === true) {
+    console.log("Colt is in the array");
   } else {
-    console.log('Colt is not in the array')
+    console.log("Colt is not in the array");
   }
-})
-
-
+});
 
 ////////// PROBLEM 5 //////////
 
@@ -107,15 +95,18 @@ contains(names, 'Colt', result => {
   Hint: you can use a nested for loop to do this.
 */
 
+//should I be writing a new function outside of the function, and pass it in as the callback?
+//Or am I supposed to be scoping it inside the function?
+
 const uniq = (array, cb) => {
-  const ans = []
-  for (i = 0; i < array.length; i++){
-    if (!ans.includes(array[i])){
-      ans.push(array[i])
+  const ans = [];
+  for (i = 0; i < array.length; i++) {
+    if (!ans.includes(array[i])) {
+      ans.push(array[i]);
     }
   }
   cb(ans);
-}
+};
 
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
@@ -124,9 +115,11 @@ const uniq = (array, cb) => {
   'The new names array with all the duplicate items removed is [UNIQARRPARAM].'
 */
 
-// CODE HERE
-
-
+uniq(names, function (uniqArr) {
+  console.log(
+    `the new names array with all the duplicate items removed is ` + uniqArr
+  );
+});
 
 ////////// PROBLEM 6 //////////
 
@@ -135,8 +128,11 @@ const uniq = (array, cb) => {
   For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
 
-// CODE HERE 
-
+const each = (array, cb) => {
+  for (i = 0; i < array.length; i++) {
+    cb(array[i], i);
+  }
+};
 
 /*
   Invoke the each function, passing in the names array and a callback function.
@@ -145,49 +141,64 @@ const uniq = (array, cb) => {
   'The item at index [INDEXPARAM] is [ITEMPARAM].'
 */
 
-// CODE HERE
-
+each(names, function (item, index) {
+  console.log(`The item at index ${index} is ${item}`);
+});
 
 ////////// PROBLEM 7 //////////
 
 /*
-  Write a function called getUserById that takes in three parameters: an array of objects (users), an id and a callback, and searches for the user with a matching id.
+  Write a function called getUserById that takes in three parameters: an array of objects (users), an id and a callback, 
+  //and searches for the user with a matching id.
   When the correct user object is found, invoke the callback with the user object as an argument.
 */
 
 // Do not edit the code below.
 var users = [
   {
-    id: '12d',
-    email: 'tyler@gmail.com',
-    name: 'Tyler',
-    address: '167 East 500 North'
+    id: "12d",
+    email: "tyler@gmail.com",
+    name: "Tyler",
+    address: "167 East 500 North",
   },
   {
-    id: '15a',
-    email: 'cahlan@gmail.com',
-    name: 'Cahlan',
-    address: '135 East 320 North'
+    id: "15a",
+    email: "cahlan@gmail.com",
+    name: "Cahlan",
+    address: "135 East 320 North",
   },
   {
-    id: '16t',
-    email: 'ryan@gmail.com',
-    name: 'Ryan',
-    address: '192 East 32 North'
+    id: "16t",
+    email: "ryan@gmail.com",
+    name: "Ryan",
+    address: "192 East 32 North",
   },
-]
+];
 // Do not edit the code above.
 
-// CODE HERE 
-
+const getUserById = (users, id, cb) => {
+  for (i = 0; i < users.length; i++) {
+    if (users[i].includes(id)) {
+      return users[i];
+    }
+  }
+  cb(users[i]);
+};
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// getUserById(users, '16t', user => {
-//   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
-// })
+getUserById(users, "16t", (user) => {
+  console.log(
+    "The user with the id 16t has the email of " +
+      user.email +
+      " the name of " +
+      user.name +
+      " and the address of " +
+      user.address
+  );
+});
 
 ////////// CHALLENGE //////////
 
@@ -204,8 +215,6 @@ var users = [
   The (inner) function that's being returned should add
   the two parameters together and return the sum.
 */
-
-// CODE HERE
 
 /*
   Now that you have addingFactory, you can create other
