@@ -101,8 +101,10 @@ const monstersInYourPocket = [
   Use the filter method to return only the monsters that have a CP of over 200.
 */
 
-// CODE HERE
-// const myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+const strongMon = (monster) => monster.CP > 200;
+
+const myStrongest = monstersInYourPocket.filter(strongMon);
+console.log(myStrongest);
 
 ////////// PROBLEM 5 //////////
 
@@ -122,11 +124,16 @@ const orders = [
 // Do not edit code above.
 
 /*
-  Use a higher order method to get all the order totals after adding in the sales tax (given to you as a tax rate, hint: you'll need to do some multiplication). Your answer should be an array of numbers, one total for each order.
+  Use a higher order method to get all the order totals after adding in the sales tax 
+  (given to you as a tax rate, hint: you'll need to do some multiplication). 
+  Your answer should be an array of numbers, one total for each order.
 */
 
-// CODE HERE
+const priceTax = orders.map((element) => {
+  return element.price * (1 + element.tax);
+});
 
+console.log(priceTax);
 ////////// PROBLEM 6 //////////
 
 // Do not edit the code below.
@@ -158,4 +165,15 @@ const purchases = [
   Use a high order method(s) to get the sum of bobsTotal.
 */
 
-// CODE HERE
+const bobPrice = (obj) => {
+  if (obj.owner === "Bob") {
+    return obj.price;
+  } else {
+    return 0;
+  }
+};
+
+const bobTotal = purchases.reduce((accumulator, currentValue) => {
+  return accumulator + bobPrice(currentValue);
+}, 0);
+console.log(bobTotal);

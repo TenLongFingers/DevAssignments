@@ -177,12 +177,11 @@ var users = [
 // Do not edit the code above.
 
 const getUserById = (users, id, cb) => {
-  for (i = 0; i < users.length; i++) {
-    if (users[i].includes(id)) {
-      return users[i];
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].id === id) {
+      cb(users[i]);
     }
   }
-  cb(users[i]);
 };
 
 // UNCOMMENT THE FUNCTION CALL BELOW
