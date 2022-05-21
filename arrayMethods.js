@@ -53,6 +53,7 @@ const prices = [15.0, 23.0, 78.0, 34.0, 12.0, 86.0, 12.0, 79.0, 32.0];
 // const populations = [8175133, 3792621, 2695598, 2100263];
 // Do not edit the code above.
 
+// changing it up
 /*
   Use the reduce method to calculate the sum of all the populations in the array.
   The reduce function has a slightly different setup for its callback.
